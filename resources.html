@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Times Tables & Fractions Resources for Parents | TableMates</title>
+<meta name="description" content="Free visual times tables tricks and a fraction wall for children aged 7–13. Simple methods parents can use at home. From TableMates 1-on-1 maths tutoring.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Times Tables & Fractions Resources | TableMates">
+<meta property="og:description" content="Free visual times tables tricks and a fraction wall for children aged 7–13.">
+<!-- When the site is live, add: <link rel="canonical" href="https://YOUR-DOMAIN/resources.html"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2B1810; --ink-soft:#5C3D2E; --brown:#7A3410;
+  --flame:#C2410C; --gold:#F5A623; --apricot:#FFE7BF; --peach:#FFF1DC; --bg:#FFF8EE;
+  --line:#F2D9B0;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+a{text-decoration:none;color:inherit}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-0.02em;text-wrap:balance}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;border:0;border-radius:14px;cursor:pointer;font-family:var(--display);font-weight:800;transition:filter .15s}
+.btn:hover{filter:brightness(.9)}
+.btn-dark{background:var(--ink);color:var(--bg);padding:0 20px;font-family:var(--body);font-weight:700;font-size:15px}
+.btn-flame{background:var(--flame);color:#fff;padding:0 28px;min-height:56px;border-radius:16px;font-size:18px;box-shadow:0 10px 24px rgba(194,65,12,.28)}
+.btn-line{background:#fff;color:var(--ink);border:2px solid var(--ink);padding:0 20px;font-family:var(--body);font-weight:700;font-size:15px}
+
+header{background:var(--apricot);padding:0 24px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-0.02em}
+.logo i{width:40px;height:40px;border-radius:12px;background:var(--flame);display:flex;align-items:center;justify-content:center}
+.logo b{color:var(--flame)}
+.nav-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.lang{display:inline-flex;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:3px}
+.lang button{min-height:38px;min-width:48px;border:0;border-radius:999px;background:transparent;color:var(--ink-soft);font:700 14px var(--body);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+.head{background:linear-gradient(180deg,var(--apricot),var(--bg));padding:48px 24px 24px}
+.head .wrap{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+h1{font-size:clamp(36px,5.2vw,58px);line-height:1.05;letter-spacing:-0.03em}
+h1 span{color:var(--flame)}
+.sub{font-size:20px;color:var(--ink-soft);max-width:560px}
+.head-btns{display:flex;flex-wrap:wrap;gap:12px}
+
+section.block{padding:56px 24px 8px}
+.stack{display:flex;flex-direction:column;gap:28px}
+h2{font-size:clamp(28px,3.8vw,40px);line-height:1.1}
+.lead{color:var(--ink-soft);max-width:560px;margin-top:-12px}
+
+/* trick cards */
+.tricks{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.trick{background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.trick .tag{font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--brown)}
+.trick h3{font-size:30px}
+.demo{background:var(--peach);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.demo .note{font-size:15px;color:var(--ink-soft)}
+.jumps{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font:800 18px var(--display)}
+.jumps .op{font-size:12px;color:var(--flame)}
+.chip-n{padding:6px 11px;border-radius:10px;background:#fff;border:1.5px solid var(--line)}
+.chip-n.hit{background:var(--gold);border-color:var(--gold)}
+
+/* cut the whole */
+.cut{display:flex;flex-wrap:wrap;gap:28px 48px;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--line);border-radius:32px;padding:clamp(20px,4vw,44px)}
+.pizza{flex:0 1 340px;width:100%;max-width:340px;min-width:0}
+.pizza svg{width:100%;height:auto;display:block;overflow:visible}
+.pizza .slice{cursor:pointer;transition:transform .25s cubic-bezier(.3,1.5,.5,1)}
+.pizza .slice:focus-visible{outline:none}
+.pizza .slice:focus-visible path{stroke:var(--ink);stroke-width:4}
+.pizza g.whole{transform-box:fill-box;transform-origin:50% 50%}
+.pizza g.pop{animation:pop .45s cubic-bezier(.3,1.5,.5,1) both}
+.cut-side{flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.cut-big{font:800 clamp(64px,12vw,120px) var(--display);letter-spacing:-0.03em;line-height:1;color:var(--flame)}
+.cut-eq{font:800 22px var(--display)}
+.cut-note{color:var(--ink-soft);max-width:340px}
+.cut-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cut-chips button{min-height:44px;min-width:52px;padding:0 12px;border-radius:12px;border:2px solid #D9B98C;background:#fff;color:var(--ink-soft);font:700 15px var(--body);cursor:pointer}
+.cut-chips button[aria-pressed="true"]{border-color:var(--ink);background:var(--gold);color:var(--ink)}
+
+/* fraction wall */
+.wall{display:flex;flex-direction:column;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:clamp(16px,3vw,28px)}
+.row{display:flex;gap:6px;align-items:stretch}
+.row div{flex:1;min-width:0;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font:800 clamp(12px,2vw,17px) var(--display);background:var(--c)}
+
+/* challenge */
+.challenge{background:var(--gold);border-radius:32px;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.q-big{font:800 clamp(48px,9vw,88px) var(--display);letter-spacing:-0.03em;line-height:1}
+.answer{min-height:90px;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center}
+.answer .jumps{justify-content:center;font-size:24px}
+.answer .jumps .op{font-size:14px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+.cta{margin:72px 24px 0;}
+.cta-in{max-width:1120px;margin:0 auto;background:var(--ink);color:var(--bg);border-radius:32px;padding:clamp(28px,5vw,48px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.cta-in h2{font-size:clamp(26px,3.4vw,36px);text-align:left;color:#fff;max-width:520px}
+.cta-in p{color:var(--apricot)}
+
+footer{margin-top:72px;background:var(--ink);color:var(--apricot);padding:28px 24px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;font-size:15px}
+footer .logo{color:#fff;font-size:20px}
+footer .logo b{color:var(--gold)}
+footer a{text-decoration:underline}
+
+.seq-hide{opacity:0}
+.pop{animation:pop .5s cubic-bezier(.3,1.5,.5,1) both}
+.grow{animation:grow .55s cubic-bezier(.3,1.3,.5,1) both;transform-origin:bottom}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.5)}to{opacity:1;transform:none}}
+@keyframes grow{from{opacity:0;transform:scaleY(.1)}to{opacity:1;transform:none}}
+.replay-unused{min-height:40px;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:12px;padding:0 14px;font:700 14px var(--body);cursor:pointer;align-self:flex-start}
+.replay:hover{background:var(--apricot)}
+@media (prefers-reduced-motion:reduce){.pop,.grow{animation:none}.seq-hide{opacity:1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* printing: black and white, big and clean */
+@media print{
+  body{background:#fff;color:#000;filter:grayscale(1)}
+  header,.head-btns,.challenge,.cta,footer{display:none}
+  .head{background:#fff;padding-top:16px}
+  .trick,.wall{break-inside:avoid;border-color:#000}
+  .chip-n.hit{background:#ddd;border-color:#000}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="TableMates">
+      <i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></i>
+      <span>Table<b>Mates</b></span>
+    </a>
+    <div class="nav-right">
+      <a class="btn btn-line" href="index.html" data-i18n="back">← Back to TableMates</a>
+      <div class="lang" role="group" aria-label="Language / Langue">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="head">
+    <div class="wrap">
+      <h1><span data-i18n="h1a" style="color:inherit">Free maths resources</span> <span data-i18n="h1b">for home.</span></h1>
+      <p class="sub" data-i18n="sub">Simple pictures and tricks that make times tables and fractions click.</p>
+      <div class="head-btns">
+        <button type="button" class="btn btn-dark" id="printBtn" data-i18n="print">Print this page</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap stack">
+      <h2 data-i18n="tricksH">Times tables tricks</h2>
+      <p class="lead" data-i18n="tricksP">Count in jumps. No flashcards needed.</p>
+      <div class="tricks" id="tricks"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap stack">
+      <h2 data-i18n="cutH">Cut the whole</h2>
+      <p class="lead" data-i18n="cutP">Tap the pizza to cut it. Then tap a piece.</p>
+      <div class="cut">
+        <div class="pizza"><svg id="pizza" viewBox="-125 -125 250 250" role="group" aria-label="Pizza"></svg></div>
+        <div class="cut-side">
+          <div class="cut-big" id="cutBig" aria-live="polite">1</div>
+          <div class="cut-eq" id="cutEq"></div>
+          <p class="cut-note" id="cutNote"></p>
+          <div class="btns">
+            <button type="button" class="btn btn-dark" id="cutBtn" style="min-height:52px;padding:0 24px;font-size:18px" data-i18n="cutMore">Cut more</button>
+          </div>
+          <div class="cut-chips" id="cutChips" role="group" data-i18n-aria="cutChipsAria" aria-label="Number of pieces"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap stack">
+      <h2 data-i18n="wallH">Fraction wall</h2>
+      <p class="lead" data-i18n="wallP">Every row is one whole. Compare the pieces.</p>
+      <div class="wall" id="wall" role="img" data-i18n-aria="wallAria" aria-label="Fraction wall from one whole down to tenths"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap stack">
+      <h2 data-i18n="chH">Try one together</h2>
+      <div class="challenge">
+        <div class="q-big" id="qBig">8 × 7</div>
+        <div class="answer" id="answer" aria-live="polite"></div>
+        <div class="btns">
+          <button type="button" class="btn btn-dark" id="showBtn" style="min-height:56px;padding:0 32px;font-size:20px" data-i18n="show">Jump!</button>
+          <button type="button" class="btn btn-line" id="newBtn" data-i18n="another">Another one</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-in">
+      <div>
+        <h2 data-i18n="ctaH">Want help making it stick?</h2>
+        <p data-i18n="ctaP">Book a free 15-minute chat.</p>
+      </div>
+      <a class="btn btn-flame" href="index.html#contact" data-i18n="ctaBtn">Book your free chat</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">Table<b>Mates</b></span>
+    <a href="index.html" data-i18n="back">← Back to TableMates</a>
+    <span data-i18n="foot">1-on-1 online maths · Ages 7–13</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var T = {
+    en: {
+      title: "Free Times Tables & Fractions Resources for Parents | TableMates",
+      desc: "Free visual times tables tricks and a fraction wall for children aged 7–13. Simple methods parents can use at home. From TableMates 1-on-1 maths tutoring.",
+      back: "← Back to TableMates", print: "Print this page",
+      h1a: "Free maths resources", h1b: "for home.",
+      sub: "Simple pictures and tricks that make times tables and fractions click.",
+      tricksH: "Times tables tricks", tricksP: "Count in jumps. No flashcards needed.",
+      tTable: "{n} times table", tJump: "Add {n} = add 10, take away {m}.",
+      t5: "5 times table", t5note: "Half of the 10 times table: 5 × 8 = half of 80 = 40.",
+      t4: "4 times table", t4note: "Double, then double again: 4 × 7 → 14 → 28.",
+      cutH: "Cut the whole", cutP: "Tap the pizza to cut it. Then tap a piece.",
+      cutMore: "Cut more", cutAgain: "Start again", cutChipsAria: "Number of pieces",
+      cutPizza: "Pizza cut into {n} equal pieces", cutSlice: "Piece {i} of {n}",
+      cutWhole: "1 whole pizza", cutTap: "Tap the pizza to cut it in half.",
+      cutEqTxt: "{n} × 1/{n} = 1", cutShare: "Share between {n} friends: each gets 1/{n}.",
+      cutPick: "Tap a piece to pull it out.", cutPicked: "1 piece out of {n} = 1/{n}",
+      wallH: "Fraction wall", wallP: "Every row is one whole. Compare the pieces.",
+      wallAria: "Fraction wall from one whole down to tenths",
+      chH: "Try one together", show: "Jump!", again: "Again", another: "Another one", ans: "Answer: {a}",
+      ctaH: "Want help making it stick?", ctaP: "Book a free 15-minute chat.", ctaBtn: "Book your free chat",
+      foot: "1-on-1 online maths · Ages 7–13"
+    },
+    fr: {
+      title: "Ressources gratuites : tables de multiplication et fractions | TableMates",
+      desc: "Astuces visuelles gratuites pour les tables de multiplication et un mur des fractions pour les 7–13 ans. Des méthodes simples à utiliser à la maison. Par TableMates.",
+      back: "← Retour à TableMates", print: "Imprimer cette page",
+      h1a: "Ressources de maths gratuites", h1b: "pour la maison.",
+      sub: "Des images et des astuces simples pour que les tables et les fractions deviennent claires.",
+      tricksH: "Astuces pour les tables", tricksP: "On compte par bonds. Pas besoin de fiches.",
+      tTable: "Table de {n}", tJump: "Ajouter {n} = ajouter 10, retirer {m}.",
+      t5: "Table de 5", t5note: "La moitié de la table de 10 : 5 × 8 = la moitié de 80 = 40.",
+      t4: "Table de 4", t4note: "Doubler, puis doubler encore : 4 × 7 → 14 → 28.",
+      cutH: "Découper l'entier", cutP: "Touchez la pizza pour la couper. Puis touchez une part.",
+      cutMore: "Couper encore", cutAgain: "Recommencer", cutChipsAria: "Nombre de parts",
+      cutPizza: "Pizza coupée en {n} parts égales", cutSlice: "Part {i} sur {n}",
+      cutWhole: "1 pizza entière", cutTap: "Touchez la pizza pour la couper en deux.",
+      cutEqTxt: "{n} × 1/{n} = 1", cutShare: "Partagée entre {n} amis : chacun reçoit 1/{n}.",
+      cutPick: "Touchez une part pour la sortir.", cutPicked: "1 part sur {n} = 1/{n}",
+      wallH: "Mur des fractions", wallP: "Chaque ligne est un entier. Comparez les morceaux.",
+      wallAria: "Mur des fractions, de l'entier jusqu'aux dixièmes",
+      chH: "Essayons ensemble", show: "Saute !", again: "Encore", another: "Une autre", ans: "Réponse : {a}",
+      ctaH: "Envie d'un coup de pouce pour que ça s'ancre ?", ctaP: "Réservez un échange gratuit de 15 minutes.", ctaBtn: "Réserver l'échange gratuit",
+      foot: "Maths en ligne, en individuel · 7–13 ans"
+    }
+  };
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var current = "en";
+  var buttons = document.querySelectorAll(".lang button");
+
+  function tpl(s, v) { return s.replace(/\{(\w+)\}/g, function (m, k) { return v[k]; }); }
+
+  function chainEl(n, upTo) {
+    var box = document.createElement("div"); box.className = "jumps";
+    for (var c = 1; c <= upTo; c++) {
+      if (c > 1) { var op = document.createElement("span"); op.className = "op"; op.textContent = "+10 −" + (10 - n); box.appendChild(op); }
+      var chip = document.createElement("span");
+      chip.className = "chip-n" + (c === upTo ? " hit" : "");
+      chip.textContent = n * c; box.appendChild(chip);
+    }
+    return box;
+  }
+
+  function card(tag, big, demoEl, note) {
+    var el = document.createElement("div"); el.className = "trick";
+    var t = document.createElement("span"); t.className = "tag"; t.textContent = tag;
+    var h = document.createElement("h3"); h.textContent = big;
+    var demo = document.createElement("div"); demo.className = "demo";
+    demo.appendChild(demoEl);
+    var nt = document.createElement("span"); nt.className = "note"; nt.textContent = note;
+    demo.appendChild(nt);
+    el.appendChild(t); el.appendChild(h); el.appendChild(demo);
+    return el;
+  }
+
+  function simpleChain(vals) {
+    var box = document.createElement("div"); box.className = "jumps";
+    vals.forEach(function (v, i) {
+      if (i) { var op = document.createElement("span"); op.className = "op"; op.textContent = "›"; box.appendChild(op); }
+      var chip = document.createElement("span"); chip.className = "chip-n" + (i === vals.length - 1 ? " hit" : ""); chip.textContent = v; box.appendChild(chip);
+    });
+    return box;
+  }
+
+  function renderTricks(tr) {
+    var box = document.getElementById("tricks"); box.innerHTML = "";
+    [9, 8, 7, 6].forEach(function (n) {
+      box.appendChild(card(tpl(tr.tTable, { n: n }), n + " × 7 = " + (n * 7), chainEl(n, 7), tpl(tr.tJump, { n: n, m: 10 - n })));
+    });
+    box.appendChild(card(tr.t5, "5 × 8 = 40", simpleChain([80, 40]), tr.t5note));
+    box.appendChild(card(tr.t4, "4 × 7 = 28", simpleChain([7, 14, 28]), tr.t4note));
+    if (reduce) return;
+    [].slice.call(box.querySelectorAll(".trick .jumps")).forEach(function (j) {
+      var kids = [].slice.call(j.children);
+      kids.forEach(function (k) { k.classList.add("seq-hide"); });
+      var go = function () { kids.forEach(function (k, i) { setTimeout(function () { k.classList.remove("seq-hide"); void k.offsetWidth; k.classList.add("pop"); }, 200 + i * 220); }); };
+      if (!("IntersectionObserver" in window)) { go(); return; }
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { go(); io.disconnect(); } }); }, { threshold: 0.6 });
+      io.observe(j);
+    });
+  }
+
+  function renderWall() {
+    var wall = document.getElementById("wall"); wall.innerHTML = "";
+    var shades = ["#F26B4E", "#F58A2D", "#F9A03A", "#FFB04A", "#FFC066", "#FFD08A", "#FFE0B2", "#FFF1DC"];
+    [1, 2, 3, 4, 5, 6, 8, 10].forEach(function (d, r) {
+      var row = document.createElement("div"); row.className = "row";
+      for (var i = 0; i < d; i++) {
+        var cell = document.createElement("div");
+        cell.style.setProperty("--c", shades[r]);
+        cell.textContent = d === 1 ? "1" : "1/" + d;
+        row.appendChild(cell);
+      }
+      wall.appendChild(row);
+    });
+  }
+
+  // ---- cut the whole: tap the pizza, discover 1/2 ... 1/10 ----
+  var cutN = 1, cutSel = -1, NS = "http://www.w3.org/2000/svg";
+  var SHADES = ["#FFD08A", "#FFC066"];
+  function pt(deg, r) { var a = deg * Math.PI / 180; return [r * Math.cos(a), r * Math.sin(a)]; }
+  function svgEl(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function selectSlice(i) { cutSel = (cutSel === i) ? -1 : i; renderCut(false); }
+
+  function renderCut(anim) {
+    var tr = T[current], n = cutN;
+    var svg = document.getElementById("pizza");
+    svg.innerHTML = "";
+    svg.setAttribute("aria-label", n === 1 ? tr.cutWhole : tpl(tr.cutPizza, { n: n }));
+    var g = svgEl("g", { "class": "whole" + (anim && !reduce ? " pop" : "") });
+    if (n === 1) {
+      var whole = svgEl("g", { "class": "slice", tabindex: "0", role: "button", "aria-label": tr.cutTap });
+      whole.appendChild(svgEl("circle", { r: 100, fill: SHADES[0], stroke: "#7A3410", "stroke-width": 3 }));
+      var t1 = svgEl("text", { "text-anchor": "middle", "dominant-baseline": "central", "font-family": "Bricolage Grotesque, system-ui, sans-serif", "font-weight": 800, "font-size": 64, fill: "#2B1810" });
+      t1.textContent = "1"; whole.appendChild(t1);
+      whole.addEventListener("click", function () { setCut(2); });
+      whole.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setCut(2); } });
+      g.appendChild(whole);
+    } else {
+      var step = 360 / n;
+      for (var i = 0; i < n; i++) {
+        var a0 = -90 + i * step, a1 = a0 + step, mid = a0 + step / 2;
+        var p0 = pt(a0, 100), p1 = pt(a1, 100), lp = pt(mid, n <= 3 ? 56 : 62), off = pt(mid, 16);
+        var on = (i === cutSel);
+        var sl = svgEl("g", { "class": "slice", tabindex: "0", role: "button", "aria-pressed": on ? "true" : "false", "aria-label": tpl(tr.cutSlice, { i: i + 1, n: n }) });
+        if (on) sl.setAttribute("style", "transform:translate(" + off[0].toFixed(1) + "px," + off[1].toFixed(1) + "px)");
+        sl.appendChild(svgEl("path", { d: "M0 0 L" + p0[0].toFixed(2) + " " + p0[1].toFixed(2) + " A100 100 0 0 1 " + p1[0].toFixed(2) + " " + p1[1].toFixed(2) + " Z", fill: on ? "#F5A623" : SHADES[i % 2], stroke: on ? "#7A3410" : "#FFF8EE", "stroke-width": on ? 3 : 4, "stroke-linejoin": "round" }));
+        var tx = svgEl("text", { x: lp[0].toFixed(1), y: lp[1].toFixed(1), "text-anchor": "middle", "dominant-baseline": "central", "font-family": "Bricolage Grotesque, system-ui, sans-serif", "font-weight": 800, "font-size": n <= 3 ? 28 : n <= 5 ? 24 : n <= 8 ? 18 : 15, fill: "#2B1810", "pointer-events": "none" });
+        tx.textContent = "1/" + n; sl.appendChild(tx);
+        (function (idx) {
+          sl.addEventListener("click", function () { selectSlice(idx); });
+          sl.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectSlice(idx); } });
+        })(i);
+        g.appendChild(sl);
+      }
+    }
+    svg.appendChild(g);
+
+    document.getElementById("cutBig").textContent = n === 1 ? "1" : "1/" + n;
+    document.getElementById("cutEq").textContent = n === 1 ? "" : tpl(tr.cutEqTxt, { n: n });
+    document.getElementById("cutNote").textContent = n === 1 ? tr.cutTap : (cutSel >= 0 ? tpl(tr.cutPicked, { n: n }) : tpl(tr.cutShare, { n: n }) + " " + tr.cutPick);
+    document.getElementById("cutBtn").textContent = n >= 10 ? tr.cutAgain : tr.cutMore;
+
+    var chips = document.getElementById("cutChips"); chips.innerHTML = "";
+    for (var c = 1; c <= 10; c++) {
+      var b = document.createElement("button"); b.type = "button";
+      b.textContent = c === 1 ? "1" : "1/" + c;
+      b.setAttribute("aria-pressed", c === n ? "true" : "false");
+      (function (v) { b.addEventListener("click", function () { setCut(v); }); })(c);
+      chips.appendChild(b);
+    }
+  }
+  function setCut(n) { cutN = n; cutSel = -1; renderCut(true); }
+  document.getElementById("cutBtn").addEventListener("click", function () { setCut(cutN >= 10 ? 1 : cutN + 1); });
+
+  // challenge: the child taps "Jump!" and counts one jump at a time
+  var cur = { a: 8, b: 7 };
+  var step = 0;
+  function pickQ() {
+    var a = [6, 7, 8, 9][Math.floor(Math.random() * 4)];
+    var b = 2 + Math.floor(Math.random() * 8);
+    cur = { a: a, b: b }; step = 0; renderChallenge(false);
+  }
+  function renderChallenge(animateLast) {
+    var tr = T[current];
+    document.getElementById("qBig").textContent = cur.a + " × " + cur.b;
+    var box = document.getElementById("answer"); box.innerHTML = "";
+    document.getElementById("showBtn").textContent = step >= cur.b ? tr.again : tr.show;
+    if (step > 0) {
+      var ch = chainEl(cur.a, step);
+      var last = ch.lastElementChild;
+      if (animateLast && !reduce) { last.classList.add("pop"); if (step > 1) ch.children[ch.children.length - 2].classList.add("pop"); }
+      box.appendChild(ch);
+    }
+    if (step >= cur.b) {
+      var p = document.createElement("p"); p.style.fontWeight = "700";
+      p.textContent = tpl(tr.ans, { a: cur.a * cur.b });
+      box.appendChild(p);
+    }
+  }
+
+  function apply(lang) {
+    current = lang;
+    var tr = T[lang];
+    document.documentElement.lang = lang;
+    document.title = tr.title;
+    var md = document.querySelector('meta[name="description"]'); if (md) md.setAttribute("content", tr.desc);
+    document.querySelectorAll("[data-i18n]").forEach(function (el) { var k = el.getAttribute("data-i18n"); if (tr[k] !== undefined) el.textContent = tr[k]; });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) { var k = el.getAttribute("data-i18n-aria"); if (tr[k] !== undefined) el.setAttribute("aria-label", tr[k]); });
+    buttons.forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false"); });
+    renderTricks(tr); renderChallenge(false); renderCut(false);
+    try { localStorage.setItem("tm-lang", lang); } catch (e) {}
+  }
+
+  buttons.forEach(function (b) { b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); }); });
+  document.getElementById("showBtn").addEventListener("click", function () {
+    if (step >= cur.b) { step = 0; renderChallenge(false); return; }
+    step++; renderChallenge(true);
+  });
+  document.getElementById("newBtn").addEventListener("click", pickQ);
+  document.getElementById("printBtn").addEventListener("click", function () { window.print(); });
+
+  renderWall();
+  pickQ();
+  var start = "en";
+  try { start = localStorage.getItem("tm-lang") || ""; } catch (e) {}
+  if (start !== "en" && start !== "fr") start = (navigator.language || "en").toLowerCase().indexOf("fr") === 0 ? "fr" : "en";
+  apply(start);
+})();
+</script>
+</body>
+</html>

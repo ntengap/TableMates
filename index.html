@@ -3,17 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TableMates</title>
-<meta name="description" content="1-on-1 online maths tutoring in times tables and fractions, ages 7–13. / Soutien en maths en ligne, en individuel, 7–13 ans.">
+<title>Times Tables & Fractions Tutor Online | 1-on-1 Maths, Ages 7–13 | TableMates</title>
+<meta name="description" content="Friendly 1-on-1 online tutoring in times tables and fractions for ages 7–13. Visual methods, no timed tests. Book a free 15-minute intro chat.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Times Tables & Fractions Tutor Online | TableMates">
+<meta property="og:description" content="Friendly 1-on-1 online tutoring in times tables and fractions for ages 7–13. Book a free 15-minute intro chat.">
+<meta name="twitter:card" content="summary">
+<!-- When the site is live, add: <link rel="canonical" href="https://YOUR-DOMAIN/"> and <meta property="og:url" content="https://YOUR-DOMAIN/"> -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"TableMates 1-on-1 online maths tutoring","serviceType":"Times tables and fractions tutoring","description":"Friendly 1-on-1 online tutoring in times tables and fractions for children aged 7 to 13, using visual models and mental strategies instead of timed tests.","provider":{"@type":"Organization","name":"TableMates"},"audience":{"@type":"PeopleAudience","suggestedMinAge":7,"suggestedMaxAge":13},"areaServed":"Online","availableLanguage":["English","French"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#2B1810; --ink-soft:#5C3D2E; --brown:#7A3410;
-  --flame:#C2410C; --flame-dark:#9A3412;
-  --gold:#F5A623; --apricot:#FFE7BF; --peach:#FFF1DC; --bg:#FFF8EE;
-  --line:#F2D9B0; --field:#D9B98C;
+  --flame:#C2410C; --gold:#F5A623; --apricot:#FFE7BF; --peach:#FFF1DC; --bg:#FFF8EE;
+  --line:#F2D9B0; --field:#D9B98C; --green:#15803D;
   --display:'Bricolage Grotesque',system-ui,sans-serif;
   --body:'DM Sans',system-ui,sans-serif;
 }
@@ -28,16 +36,21 @@ h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-0.02em;text-
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;border:0;border-radius:14px;cursor:pointer;font-family:var(--display);font-weight:800;transition:filter .15s}
 .btn:hover{filter:brightness(.9)}
 .btn-dark{background:var(--ink);color:var(--bg);padding:0 20px;font-family:var(--body);font-weight:700;font-size:15px}
-.btn-wa{background:#15803D;color:#fff;padding:0 24px;min-height:54px;border-radius:16px;font-size:17px;width:100%}
 .btn-flame{background:var(--flame);color:#fff;padding:0 28px;min-height:56px;border-radius:16px;font-size:18px;box-shadow:0 10px 24px rgba(194,65,12,.28)}
+.err{color:#B91C1C;font-weight:700;font-size:15px}
+input.bad{border-color:#B91C1C!important}
+.btn-wa{background:var(--green);color:#fff;padding:0 24px;min-height:54px;border-radius:16px;font-size:17px}
 
-/* nav */
+/* announcement + nav */
+.strip{background:var(--ink);color:var(--apricot);text-align:center;padding:10px 24px;font-size:15px;font-weight:700}
+.strip a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;margin-left:6px}
 header{background:var(--apricot);padding:0 24px}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0;flex-wrap:wrap}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-0.02em}
 .logo i{width:40px;height:40px;border-radius:12px;background:var(--flame);display:flex;align-items:center;justify-content:center}
 .logo b{color:var(--flame)}
-.nav-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.nav-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.nav-link{font-weight:700;font-size:15px;color:var(--ink);min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:5px}
 .lang{display:inline-flex;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:3px}
 .lang button{min-height:38px;min-width:48px;border:0;border-radius:999px;background:transparent;color:var(--ink-soft);font:700 14px var(--body);cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
@@ -47,11 +60,12 @@ header{background:var(--apricot);padding:0 24px}
 .hero .wrap{display:flex;flex-wrap:wrap;gap:56px;align-items:center}
 .hero-copy{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:24px;align-items:flex-start}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#fff;border:1.5px solid #F5C56E;font-weight:700;font-size:14px;color:var(--brown)}
-h1{font-size:clamp(42px,6.4vw,72px);line-height:1.02;letter-spacing:-0.03em}
+h1{font-size:clamp(38px,5.6vw,64px);line-height:1.04;letter-spacing:-0.03em}
 h1 span{color:var(--flame)}
-.sub{font-size:20px;color:var(--ink-soft);max-width:460px}
+.sub{font-size:20px;color:var(--ink-soft);max-width:480px}
 .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
 .small{font-size:15px;color:#6B4A39}
+.btn-hero{min-height:64px;padding:0 34px;font-size:20px;border-radius:18px}
 
 /* staircase */
 .stairs-wrap{flex:1 1 420px;min-width:0;position:relative}
@@ -65,9 +79,9 @@ h1 span{color:var(--flame)}
 
 /* sections */
 section.block{padding:72px 24px 24px}
-section.steps{padding:72px 24px 80px}
-h2{font-size:clamp(30px,4.2vw,44px);line-height:1.1;text-align:center}
 .stack{display:flex;flex-direction:column;gap:36px}
+h2{font-size:clamp(30px,4.2vw,44px);line-height:1.1;text-align:center}
+.lead{text-align:center;color:var(--ink-soft);max-width:560px;margin:-16px auto 0}
 .cards{display:flex;flex-wrap:wrap;gap:24px}
 .card{flex:1 1 400px;min-width:0;background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:22px}
 .tag{font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--brown)}
@@ -83,21 +97,54 @@ h2{font-size:clamp(30px,4.2vw,44px);line-height:1.1;text-align:center}
 .q{height:48px;border-radius:12px;border:2px dashed #C9A67E;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#8A6B55;text-decoration:line-through}
 .q.left{border:0;background:var(--gold);color:var(--ink);text-decoration:none;font:800 20px var(--display)}
 
-.extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.x-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
-.x-card .ico{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center}
-.x-card h3{font-size:22px;letter-spacing:-0.01em}
-.x-card p{color:var(--ink-soft);font-size:16px}
-.cv{display:flex;align-items:center;justify-content:center;gap:12px;text-align:center;background:var(--gold);border-radius:20px;padding:18px 24px;font:800 clamp(18px,2.4vw,22px) var(--display);letter-spacing:-0.01em;text-wrap:balance}
-.path{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end}
-.step-card{flex:1 1 280px;min-width:0;background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:14px}
-.step-card:nth-child(1){min-height:230px}
-.step-card:nth-child(2){min-height:290px}
-.step-card:nth-child(3){min-height:350px;background:var(--gold);border-color:var(--gold);box-shadow:0 18px 40px rgba(245,166,35,.35)}
-.step-card .ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center}
-.step-card h3{font-size:24px;letter-spacing:-0.01em}
-.step-card p{color:var(--ink-soft)}
-.step-card:nth-child(3) p{color:var(--ink)}
+/* free chat band */
+.chat-band{margin:72px 24px 0;}
+.chat-in{max-width:1120px;margin:0 auto;background:var(--gold);border-radius:36px;padding:clamp(28px,5vw,56px);display:flex;flex-direction:column;gap:30px;align-items:center;text-align:center;box-shadow:0 24px 56px rgba(245,166,35,.4)}
+.chat-in h2{font-size:clamp(32px,4.6vw,52px)}
+.chat-pts{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;width:100%}
+.chat-pt{flex:1 1 220px;min-width:0;background:var(--bg);border-radius:22px;padding:20px;display:flex;flex-direction:column;align-items:center;gap:10px;font-weight:700}
+.chat-pt i{width:48px;height:48px;border-radius:16px;background:var(--apricot);display:flex;align-items:center;justify-content:center}
+.chat-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+/* tutor */
+.tutor{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:center}
+.photo{position:relative;width:200px;height:200px;border-radius:50%;flex:none;background:linear-gradient(135deg,#FFC066,#F26B4E);display:flex;align-items:center;justify-content:center;font:800 80px var(--display);color:#fff;overflow:hidden;border:6px solid #fff;box-shadow:0 14px 32px rgba(122,52,16,.2)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tutor-copy{flex:1 1 320px;max-width:560px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.tutor-copy h2{text-align:left;font-size:clamp(28px,3.6vw,38px)}
+.badges{display:flex;flex-wrap:wrap;gap:10px}
+.badge{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-weight:700;font-size:14px}
+
+/* lessons */
+.lesson{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.l-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.l-card .n{width:44px;height:44px;border-radius:50%;background:var(--flame);color:#fff;display:flex;align-items:center;justify-content:center;font:800 20px var(--display)}
+.l-card h3{font-size:22px}
+.l-card p{color:var(--ink-soft);font-size:16px}
+.expect{background:var(--peach);border-radius:28px;padding:clamp(24px,4vw,36px);display:flex;flex-direction:column;gap:18px}
+.expect h3{font-size:26px;text-align:center}
+.ticks{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:center;list-style:none;margin:0;padding:0}
+.ticks li{display:flex;align-items:center;gap:10px;font-weight:700}
+.ticks svg{flex:none}
+.facts{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.fact{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:10px 18px;font-size:15px}
+.fact b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brown)}
+
+/* testimonials */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.quote{background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.quote p{font-size:18px}
+.quote span{font-weight:700;color:var(--brown);font-size:15px}
+
+/* enrichment (secondary) */
+.enrich{background:var(--peach);margin-top:72px;padding:56px 24px}
+.enrich h2{font-size:clamp(26px,3.4vw,34px)}
+.extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.x-card{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:20px;display:flex;align-items:center;gap:14px;min-width:0}
+.x-card .ico{width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;flex:none}
+.x-card h3{font-size:18px;letter-spacing:-0.01em}
+.x-card p{color:var(--ink-soft);font-size:14px;line-height:1.35}
+.cv{text-align:center;font-weight:700;color:var(--brown)}
 
 /* contact */
 #contact{padding:72px 24px 88px;background:linear-gradient(180deg,var(--bg),var(--apricot))}
@@ -109,6 +156,7 @@ h2{font-size:clamp(30px,4.2vw,44px);line-height:1.1;text-align:center}
 form{display:flex;flex-direction:column;gap:20px}
 .field{display:flex;flex-direction:column;gap:6px}
 label,.lbl{font-weight:700;font-size:15px}
+.lbl small{font-weight:500;color:var(--ink-soft)}
 input[type=text]{height:50px;width:100%;padding:0 16px;border-radius:14px;border:1.5px solid var(--field);background:#FFFBF5;color:var(--ink);font:16px var(--body)}
 input::placeholder{color:#8A6B55}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
@@ -121,14 +169,25 @@ input::placeholder{color:#8A6B55}
 .sent .thanks{display:flex}
 
 footer{background:var(--ink);color:var(--apricot);padding:28px 24px}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;font-size:15px}
 footer .logo{color:#fff;font-size:20px}
 footer .logo b{color:var(--gold)}
+footer a{text-decoration:underline}
 
+.seq-hide{opacity:0}
+.pop{animation:pop .5s cubic-bezier(.3,1.5,.5,1) both}
+.grow{animation:grow .55s cubic-bezier(.3,1.3,.5,1) both;transform-origin:bottom}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.5)}to{opacity:1;transform:none}}
+@keyframes grow{from{opacity:0;transform:scaleY(.1)}to{opacity:1;transform:none}}
+.replay{min-height:40px;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:12px;padding:0 14px;font:700 14px var(--body);cursor:pointer;align-self:flex-start}
+.replay:hover{background:var(--apricot)}
+@media (prefers-reduced-motion:reduce){.pop,.grow{animation:none}.seq-hide{opacity:1}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
 <body>
+
+<div class="strip"><span data-i18n="strip">Free 15-minute intro chat for every new family.</span><a href="#contact" data-i18n="stripCta">Book yours</a></div>
 
 <header>
   <div class="wrap nav">
@@ -137,32 +196,35 @@ footer .logo b{color:var(--gold)}
       <span>Table<b>Mates</b></span>
     </a>
     <div class="nav-right">
+      <a class="nav-link" href="resources.html" data-i18n="navRes">Free resources</a>
       <div class="lang" role="group" aria-label="Language / Langue">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="fr" aria-pressed="false">FR</button>
       </div>
-      <a class="btn btn-dark" href="#contact" data-i18n="navCta">Book a free chat</a>
+      <a class="btn btn-dark" href="#contact" data-i18n="navCta">Free 15-min chat</a>
     </div>
   </div>
 </header>
 
 <main id="top">
+
+  <!-- HERO: maths first -->
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
         <span class="pill">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
-          <span data-i18n="pill">1-on-1 online maths · Ages 7–13</span>
+          <span data-i18n="pill">Times tables & fractions · 1-on-1 online · Ages 7–13</span>
         </span>
-        <h1><span data-i18n="h1a" style="color:inherit">Strong numbers.</span> <span data-i18n="h1b">Bright futures.</span></h1>
-        <p class="sub" data-i18n="sub">Friendly tutoring in times tables and fractions.</p>
+        <h1><span data-i18n="h1a" style="color:inherit">Times tables and fractions,</span> <span data-i18n="h1b">made clear.</span></h1>
+        <p class="sub" data-i18n="sub">Calm 1-on-1 tutoring that builds confidence for every maths topic ahead.</p>
         <div class="cta-row">
-          <a class="btn btn-flame" href="#contact">
-            <span data-i18n="heroCta">Book a free chat</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <a class="btn btn-flame btn-hero" href="#contact">
+            <span data-i18n="heroCta">Book your free 15-minute chat</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <span class="small" data-i18n="heroSmall">Free 15 minutes. No timed tests.</span>
         </div>
+        <span class="small" data-i18n="heroSmall">No timed tests. No pressure. No obligation.</span>
       </div>
 
       <div class="stairs-wrap">
@@ -185,6 +247,7 @@ footer .logo b{color:var(--gold)}
     </div>
   </section>
 
+  <!-- THE TWO SKILLS -->
   <section class="block">
     <div class="wrap stack">
       <h2 data-i18n="skillsH">Two skills that unlock everything</h2>
@@ -195,6 +258,7 @@ footer .logo b{color:var(--gold)}
           <div class="demo">
             <div class="jumps" id="chain"></div>
             <span class="note" data-i18n="noteTables">Add 8 = add 10, take away 2.</span>
+            <button type="button" class="replay" data-replay="chain" data-gap="330">↻ <span data-i18n="replay">Replay</span></button>
           </div>
         </div>
         <div class="card">
@@ -202,57 +266,102 @@ footer .logo b{color:var(--gold)}
           <div class="eq" id="eqF">1 − ¾ = ¼</div>
           <div class="demo">
             <div class="quarters" id="parts" aria-hidden="true"></div>
-            <span class="note" data-i18n="noteFractions">1 whole = 4 quarters.</span>
+            <span class="note" data-i18n="noteFractions">1 whole = 4/4.</span>
+            <button type="button" class="replay" data-replay="parts" data-gap="380">↻ <span data-i18n="replay">Replay</span></button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FREE CHAT (prominent) -->
+  <section class="chat-band" id="free-chat">
+    <div class="chat-in">
+      <h2 data-i18n="chatH">Start with a free 15-minute chat</h2>
+      <div class="chat-pts">
+        <div class="chat-pt"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/></svg></i><span data-i18n="chat1">Tell me where your child is stuck</span></div>
+        <div class="chat-pt"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></i><span data-i18n="chat2">See how a lesson works</span></div>
+        <div class="chat-pt"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></i><span data-i18n="chat3">Leave with a clear plan</span></div>
+      </div>
+      <div class="chat-btns">
+        <a class="btn btn-flame" href="#contact" data-i18n="chatBtn">Book the free chat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTOR -->
+  <section class="block">
+    <div class="wrap">
+      <div class="tutor">
+        <div class="photo">
+          <span id="initial" aria-hidden="true">P</span>
+          <img id="tutorPhoto" src="tutor.jpg" alt="" onerror="this.style.display='none'">
+        </div>
+        <div class="tutor-copy">
+          <h2 id="tutorH" data-i18n="tutorH">Hi, I'm {tutor}.</h2>
+          <p data-i18n="tutorP">I'm a teaching assistant at a local school, and a parent too. I work with children of different ages and needs, and I know how a calm explanation can change how a child feels about maths.</p>
+          <div class="badges">
+            <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="b1">Teaching assistant</span></span>
+            <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="b2">Current DBS check</span></span>
+            <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="b3">Classroom experience</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW LESSONS WORK -->
   <section class="block">
     <div class="wrap stack">
-      <h2 data-i18n="extrasH">More than maths</h2>
-      <div class="extras">
-        <div class="x-card"><span class="ico" style="background:#FFE0B2"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01M9 16h6M3 13v2M21 13v2"/></svg></span><h3 data-i18n="xRobot">Robotics</h3><p data-i18n="xRobotP">Build and code a real robot.</p></div>
-        <div class="x-card"><span class="ico" style="background:#FFD08A"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><h3 data-i18n="xElec">Electronics</h3><p data-i18n="xElecP">Make circuits that light up.</p></div>
-        <div class="x-card"><span class="ico" style="background:#FFC066"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h7M8.5 14h4"/></svg></span><h3 data-i18n="xLang">Speaking a language</h3><p data-i18n="xLangP">Talk with confidence.</p></div>
-        <div class="x-card"><span class="ico" style="background:#FFB04A"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l3.8 2.8-1.4 4.4H9.6l-1.4-4.4z"/></svg></span><h3 data-i18n="xFoot">Football</h3><p data-i18n="xFootP">Sharper skills, match confidence.</p></div>
+      <h2 data-i18n="lessonH">How a lesson works</h2>
+      <div class="lesson">
+        <div class="l-card"><span class="n">1</span><h3 data-i18n="le1h">Warm up</h3><p data-i18n="le1p">A relaxed chat about numbers.</p></div>
+        <div class="l-card"><span class="n">2</span><h3 data-i18n="le2h">See it</h3><p data-i18n="le2p">Pictures and models show why it works.</p></div>
+        <div class="l-card"><span class="n">3</span><h3 data-i18n="le3h">Try it</h3><p data-i18n="le3p">Your child practises with a simple trick.</p></div>
+        <div class="l-card"><span class="n">4</span><h3 data-i18n="le4h">Explain it</h3><p data-i18n="le4p">They teach it back. That's when it sticks.</p></div>
       </div>
-      <div class="cv">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFF8EE" stroke="#2B1810" stroke-width="2" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
-        <span data-i18n="xCv">Extras like these can make the difference on a CV.</span>
+      <div class="expect">
+        <h3 data-i18n="expH">What you can expect</h3>
+        <ul class="ticks">
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="ex1">No timed tests</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="ex2">Their own pace</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="ex3">Small wins you can see</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="ex4">A reply within one school day</span></li>
+        </ul>
+        <div class="facts" id="facts"></div>
       </div>
     </div>
   </section>
 
-  <section class="steps">
+  <!-- TESTIMONIALS: shown only when entries are added in CONFIG -->
+  <section class="block" id="testimonials" hidden>
     <div class="wrap stack">
-      <h2 data-i18n="stepsH">Three easy steps up</h2>
-      <div class="path">
-        <div class="step-card">
-          <span class="ico" style="background:#FFE0B2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/></svg></span>
-          <h3 data-i18n="s1h">1 · Free 15-min chat</h3>
-          <p data-i18n="s1p">Tell us where your child is stuck.</p>
-        </div>
-        <div class="step-card">
-          <span class="ico" style="background:#FFC066"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
-          <h3 data-i18n="s2h">2 · Relaxed 1-on-1 sessions</h3>
-          <p data-i18n="s2p">Visual, calm, at their own pace.</p>
-        </div>
-        <div class="step-card">
-          <span class="ico" style="background:#FFF8EE"><svg width="26" height="26" viewBox="0 0 24 24" fill="#F5A623" stroke="#2B1810" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg></span>
-          <h3 data-i18n="s3h">3 · Confidence that lasts</h3>
-          <p data-i18n="s3p">Hands up in class. Homework without battles.</p>
-        </div>
-      </div>
+      <h2 data-i18n="quotesH">What parents say</h2>
+      <div class="quotes" id="quotes"></div>
     </div>
   </section>
 
+  <!-- ENRICHMENT (secondary) -->
+  <section class="enrich">
+    <div class="wrap stack" style="gap:24px">
+      <h2 data-i18n="enrichH">Also available: enrichment</h2>
+      <p class="lead" style="margin-top:-8px" data-i18n="enrichP">For children who want to go further, alongside their maths.</p>
+      <div class="extras">
+        <div class="x-card"><span class="ico" style="background:#FFE0B2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01M9 16h6M3 13v2M21 13v2"/></svg></span><div><h3 data-i18n="xRobot">Robotics</h3><p data-i18n="xRobotP">Build and code a real robot.</p></div></div>
+        <div class="x-card"><span class="ico" style="background:#FFD08A"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><div><h3 data-i18n="xElec">Electronics</h3><p data-i18n="xElecP">Make circuits that light up.</p></div></div>
+        <div class="x-card"><span class="ico" style="background:#FFC066"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h7M8.5 14h4"/></svg></span><div><h3 data-i18n="xLang">Speaking a language</h3><p data-i18n="xLangP">Talk with confidence.</p></div></div>
+        <div class="x-card"><span class="ico" style="background:#FFB04A"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l3.8 2.8-1.4 4.4H9.6l-1.4-4.4z"/></svg></span><div><h3 data-i18n="xFoot">Football</h3><p data-i18n="xFootP">Sharper skills, match confidence.</p></div></div>
+      </div>
+      <p class="cv" data-i18n="xCv">Extras like these can make the difference on a CV.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact">
     <div class="contact-in">
       <div class="contact-head">
-        <h2 data-i18n="contactH">Ready to see them shine?</h2>
-        <p data-i18n="contactP">Free 15-minute intro chat. We reply within one school day.</p>
+        <h2 data-i18n="contactH">Book your free 15-minute chat</h2>
+        <p data-i18n="contactP">We reply within one school day.</p>
       </div>
       <div class="form-card" id="formCard">
         <form id="inquiry" novalidate>
@@ -270,25 +379,32 @@ footer .logo b{color:var(--gold)}
           </div>
           <div class="field">
             <span class="lbl" id="helpLbl" data-i18n="fHelp">Help with</span>
-            <div class="chips" role="group" aria-labelledby="helpLbl">
+            <div class="chips" id="grpMain" role="group" aria-labelledby="helpLbl">
               <button type="button" aria-pressed="true" data-i18n="cTables">Times tables</button>
               <button type="button" aria-pressed="false" data-i18n="cFractions">Fractions</button>
+              <button type="button" aria-pressed="false" data-excl data-i18n="cUnsure">Not sure yet</button>
+            </div>
+          </div>
+          <div class="field">
+            <span class="lbl" id="extraLbl"><span data-i18n="fExtra">Also interested in</span> <small data-i18n="optional">(optional)</small></span>
+            <div class="chips" id="grpExtra" role="group" aria-labelledby="extraLbl">
               <button type="button" aria-pressed="false" data-i18n="cRobot">Robotics</button>
               <button type="button" aria-pressed="false" data-i18n="cElec">Electronics</button>
               <button type="button" aria-pressed="false" data-i18n="cLang">Speaking a language</button>
               <button type="button" aria-pressed="false" data-i18n="cFoot">Football</button>
-              <button type="button" aria-pressed="false" data-excl data-i18n="cUnsure">Not sure yet</button>
               <button type="button" aria-pressed="false" data-excl data-i18n="cSurprise">Surprise me</button>
             </div>
           </div>
-          <button class="btn btn-flame" type="submit" style="min-height:58px;width:100%" data-i18n="submit">Book my free chat</button>
+          <p id="formErr" class="err" role="alert" hidden></p>
+          <button class="btn btn-wa" type="submit" style="min-height:58px;width:100%"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.2-3 .9.9-2.9-.2-.3a8.1 8.1 0 0 1 6.9-12.5zM8.6 7.4c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3l-1.9-.9c-.3-.1-.5-.1-.7.1l-.9 1.1c-.1.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.5-2-.2-.3 0-.4.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5z"/></svg><span data-i18n="submit">Send on WhatsApp</span></button>
         </form>
-        <a class="btn btn-wa" id="waDirect" href="#" target="_blank" rel="noopener" style="margin-top:14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.2-3 .9.9-2.9-.2-.3a8.1 8.1 0 0 1 6.9-12.5zM8.6 7.4c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.200 3c.1.2 2 3.200 5 4.400 2.500 1 3 .8 3.500.7.6-.1 1.800-.7 2-1.400.3-.7.3-1.300.2-1.400-.1-.1-.3-.2-.6-.3l-1.900-.9c-.3-.1-.5-.1-.7.1l-.9 1.100c-.1.200-.3.200-.6.100-.3-.2-1.200-.4-2.300-1.400-.8-.8-1.400-1.700-1.500-2-.2-.3 0-.4.100-.6l.4-.5c.1-.1.2-.3.300-.5.1-.2 0-.4 0-.5l-.9-2.100c-.2-.5-.4-.5-.6-.5z"/></svg><span data-i18n="waBtn">Message me on WhatsApp</span></a>
         <div class="thanks" role="status">
           <svg width="64" height="64" viewBox="0 0 24 24" fill="#F5A623" stroke="#C2410C" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
           <h3 data-i18n="thanksH">Thank you!</h3>
           <p data-i18n="thanksP">We'll reply within one school day.</p>
-          <a class="btn btn-wa" id="waThanks" href="#" target="_blank" rel="noopener" style="max-width:320px"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.2-3 .9.9-2.9-.2-.3a8.1 8.1 0 0 1 6.9-12.5zM8.6 7.4c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.200 3c.1.2 2 3.200 5 4.400 2.500 1 3 .8 3.500.7.6-.1 1.800-.7 2-1.400.3-.7.3-1.300.2-1.400-.1-.1-.3-.2-.6-.3l-1.900-.9c-.3-.1-.5-.1-.7.1l-.9 1.100c-.1.200-.3.200-.6.100-.3-.2-1.200-.4-2.300-1.400-.8-.8-1.400-1.700-1.500-2-.2-.3 0-.4.100-.6l.4-.5c.1-.1.2-.3.300-.5.1-.2 0-.4 0-.5l-.9-2.100c-.2-.5-.4-.5-.6-.5z"/></svg><span data-i18n="waOpen">Open WhatsApp</span></a>
+          <a class="btn btn-wa" id="waThanks" href="#" target="_blank" rel="noopener" style="max-width:320px">
+            <span data-i18n="waOpen">Open WhatsApp</span>
+          </a>
         </div>
       </div>
     </div>
@@ -298,101 +414,149 @@ footer .logo b{color:var(--gold)}
 <footer>
   <div class="wrap">
     <span class="logo">Table<b>Mates</b></span>
+    <a href="resources.html" data-i18n="navRes">Free resources</a>
     <span data-i18n="foot">1-on-1 online maths · Ages 7–13</span>
   </div>
 </footer>
 
 <script>
 (function () {
+  // ================= EDIT YOUR DETAILS HERE =================
+  var CONFIG = {
+    // WhatsApp: international format, digits only, no "+" or spaces. UK 07700 900077 -> "447700900077"
+    whatsapp: "447459532358",
+    tutorName: "Mr P",
+    // Optional facts shown under "What you can expect". Leave "" to hide a fact.
+    details: { length: "", format: "", price: "" },
+    // Add parent testimonials ONLY with the parent's permission. Example:
+    // { en: "My son stopped dreading maths.", fr: "Mon fils n'a plus peur des maths.", who: "Parent of a Year 5 pupil" }
+    testimonials: []
+  };
+  // ==========================================================
+
   var T = {
     en: {
-      navCta: "Book a free chat",
-      pill: "1-on-1 online maths · Ages 7–13",
-      h1a: "Strong numbers.", h1b: "Bright futures.",
-      sub: "Friendly tutoring in times tables and fractions.",
-      heroCta: "Book a free chat",
-      heroSmall: "Free 15 minutes. No timed tests.",
+      title: "Times Tables & Fractions Tutor Online | 1-on-1 Maths, Ages 7–13 | TableMates",
+      desc: "Friendly 1-on-1 online tutoring in times tables and fractions for ages 7–13. Visual methods, no timed tests. Book a free 15-minute intro chat.",
+      strip: "Free 15-minute intro chat for every new family.", stripCta: "Book yours",
+      replay: "Replay",
+      navRes: "Free resources", navCta: "Free 15-min chat",
+      pill: "Times tables & fractions · 1-on-1 online · Ages 7–13",
+      h1a: "Times tables and fractions,", h1b: "made clear.",
+      sub: "Calm 1-on-1 tutoring that builds confidence for every maths topic ahead.",
+      heroCta: "Book your free 15-minute chat",
+      heroSmall: "No timed tests. No pressure. No obligation.",
       stairsAria: "Staircase counting by {n}s up to {p}, with a gold star on top",
       stairsCap: "Counting by {n}s: {n} × 7 = {p}",
       skillsH: "Two skills that unlock everything",
       tagTables: "Times tables", tagFractions: "Fractions",
       noteTables: "Add {n} = add 10, take away {m}.",
       noteFractions: "1 whole = {d}/{d}.",
-      stepsH: "Three easy steps up",
-      s1h: "1 · Free 15-min chat", s1p: "Tell us where your child is stuck.",
-      s2h: "2 · Relaxed 1-on-1 sessions", s2p: "Visual, calm, at their own pace.",
-      s3h: "3 · Confidence that lasts", s3p: "Hands up in class. Homework without battles.",
-      contactH: "Ready to see them shine?",
-      contactP: "Free 15-minute intro chat. We reply within one school day.",
-      fName: "Your name", phName: "e.g. Sarah Patel",
-      fAge: "Child's age or year group", phAge: "e.g. Age 9 / Year 5",
-      fContact: "Email or phone", phContact: "e.g. sarah@example.com or 07700 900077",
-      fHelp: "Help with",
-      cTables: "Times tables", cFractions: "Fractions", cUnsure: "Not sure yet", cSurprise: "Surprise me",
-      waBtn: "Message me on WhatsApp", waOpen: "Open WhatsApp",
-      waHello: "Hello TableMates! I'd like to book a free 15-minute chat.",
-      waMsg: "Hello TableMates! I'm {name}. My child ({age}) would like help with: {topics}. You can reach me on: {contact}.",
-      cRobot: "Robotics", cElec: "Electronics", cLang: "Speaking a language", cFoot: "Football",
-      extrasH: "More than maths",
+      chatH: "Start with a free 15-minute chat",
+      chat1: "Tell me where your child is stuck", chat2: "See how a lesson works", chat3: "Leave with a clear plan",
+      chatBtn: "Book the free chat",
+      tutorH: "Hi, I'm {tutor}.",
+      tutorP: "I'm a teaching assistant at a local school, and a parent too. I work with children of different ages and needs, and I know how a calm explanation can change how a child feels about maths.",
+      b1: "Teaching assistant", b2: "Current DBS check", b3: "Classroom experience",
+      lessonH: "How a lesson works",
+      le1h: "Warm up", le1p: "A relaxed chat about numbers.",
+      le2h: "See it", le2p: "Pictures and models show why it works.",
+      le3h: "Try it", le3p: "Your child practises with a simple trick.",
+      le4h: "Explain it", le4p: "They teach it back. That's when it sticks.",
+      expH: "What you can expect",
+      ex1: "No timed tests", ex2: "Their own pace", ex3: "Small wins you can see", ex4: "A reply within one school day",
+      dLength: "Session length", dFormat: "Where", dPrice: "Price",
+      quotesH: "What parents say",
+      enrichH: "Also available: enrichment",
+      enrichP: "For children who want to go further, alongside their maths.",
       xRobot: "Robotics", xRobotP: "Build and code a real robot.",
       xElec: "Electronics", xElecP: "Make circuits that light up.",
       xLang: "Speaking a language", xLangP: "Talk with confidence.",
       xFoot: "Football", xFootP: "Sharper skills, match confidence.",
       xCv: "Extras like these can make the difference on a CV.",
-      submit: "Book my free chat",
+      contactH: "Book your free 15-minute chat",
+      contactP: "We reply within one school day.",
+      fName: "Your name", phName: "e.g. Sarah Patel",
+      fAge: "Child's age or year group", phAge: "e.g. Age 9 / Year 5",
+      fContact: "Email or phone", phContact: "e.g. sarah@example.com or 07700 900077",
+      fHelp: "Help with", fExtra: "Also interested in", optional: "(optional)",
+      cTables: "Times tables", cFractions: "Fractions", cUnsure: "Not sure yet",
+      cRobot: "Robotics", cElec: "Electronics", cLang: "Speaking a language", cFoot: "Football", cSurprise: "Surprise me",
+      submit: "Send on WhatsApp", errFill: "Please fill in your name, your child's age and how to reach you.", errTopic: "Please choose what you need help with.",
+      waBtn: "Message me on WhatsApp", waOpen: "Open WhatsApp",
+      waHello: "Hello TableMates! I'd like to book a free 15-minute chat.",
+      waMsg: "Hello TableMates! I'm {name}. My child ({age}) would like help with: {topics}. You can reach me on: {contact}.",
+      waExtra: " Also interested in: {extras}.",
       thanksH: "Thank you!", thanksP: "We'll reply within one school day.",
       foot: "1-on-1 online maths · Ages 7–13"
     },
     fr: {
-      navCta: "Échange gratuit",
-      pill: "Maths en ligne, en individuel · 7–13 ans",
-      h1a: "Des bases solides.", h1b: "Un avenir radieux.",
-      sub: "Un accompagnement chaleureux en tables de multiplication et en fractions.",
-      heroCta: "Réserver un échange gratuit",
-      heroSmall: "15 minutes offertes. Aucun test chronométré.",
+      title: "Cours de tables de multiplication et fractions en ligne | Maths 7–13 ans | TableMates",
+      desc: "Soutien en maths en ligne, en individuel, pour les 7–13 ans : tables de multiplication et fractions, méthodes visuelles, sans test chronométré. Échange gratuit de 15 minutes.",
+      strip: "Échange d'introduction gratuit de 15 minutes pour chaque nouvelle famille.", stripCta: "Réservez le vôtre",
+      replay: "Rejouer",
+      navRes: "Ressources gratuites", navCta: "Échange gratuit",
+      pill: "Tables de multiplication & fractions · En ligne, en individuel · 7–13 ans",
+      h1a: "Tables de multiplication et fractions,", h1b: "enfin claires.",
+      sub: "Un accompagnement calme, en individuel, qui donne confiance pour tous les chapitres de maths à venir.",
+      heroCta: "Réservez votre échange gratuit de 15 minutes",
+      heroSmall: "Aucun test chronométré. Aucune pression. Sans engagement.",
       stairsAria: "Escalier qui compte de {n} en {n} jusqu'à {p}, avec une étoile dorée au sommet",
       stairsCap: "On compte de {n} en {n} : {n} × 7 = {p}",
       skillsH: "Deux bases qui débloquent tout",
       tagTables: "Tables de multiplication", tagFractions: "Fractions",
       noteTables: "Ajouter {n} = ajouter 10, retirer {m}.",
       noteFractions: "1 entier = {d}/{d}.",
-      stepsH: "Trois étapes simples",
-      s1h: "1 · Échange gratuit de 15 min", s1p: "Dites-nous où votre enfant bloque.",
-      s2h: "2 · Séances individuelles détendues", s2p: "Visuelles, calmes, à son rythme.",
-      s3h: "3 · Une confiance durable", s3p: "La main levée en classe. Des devoirs sans conflits.",
-      contactH: "Prêt à voir votre enfant briller ?",
-      contactP: "Échange d'introduction gratuit de 15 minutes. Réponse sous un jour d'école.",
-      fName: "Votre nom", phName: "ex. Sarah Patel",
-      fAge: "Âge ou niveau de votre enfant", phAge: "ex. 9 ans / CM1",
-      fContact: "E-mail ou téléphone", phContact: "ex. sarah@exemple.fr ou 07700 900077",
-      fHelp: "Besoin d'aide en",
-      cTables: "Tables de multiplication", cFractions: "Fractions", cUnsure: "Je ne sais pas encore", cSurprise: "Surprenez-moi",
-      waBtn: "Écrivez-moi sur WhatsApp", waOpen: "Ouvrir WhatsApp",
-      waHello: "Bonjour TableMates ! Je souhaite réserver un échange gratuit de 15 minutes.",
-      waMsg: "Bonjour TableMates ! Je suis {name}. Mon enfant ({age}) aurait besoin d'aide en : {topics}. Vous pouvez me joindre au : {contact}.",
-      cRobot: "Robotique", cElec: "Électronique", cLang: "Parler une langue", cFoot: "Football",
-      extrasH: "Plus que des maths",
+      chatH: "Commencez par un échange gratuit de 15 minutes",
+      chat1: "Dites-moi où votre enfant bloque", chat2: "Découvrez le déroulé d'une séance", chat3: "Repartez avec un plan clair",
+      chatBtn: "Réserver l'échange gratuit",
+      tutorH: "Bonjour, je suis {tutor}.",
+      tutorP: "Je travaille dans une école locale comme assistant(e) pédagogique, et je suis parent aussi. J'accompagne des enfants d'âges et de besoins différents, et je sais qu'une explication calme peut changer le regard d'un enfant sur les maths.",
+      b1: "Assistant(e) pédagogique", b2: "Contrôle DBS en cours de validité", b3: "Expérience en classe",
+      lessonH: "Comment se passe une séance",
+      le1h: "Échauffement", le1p: "Une discussion détendue sur les nombres.",
+      le2h: "Voir", le2p: "Des images et des schémas montrent pourquoi ça marche.",
+      le3h: "Essayer", le3p: "Votre enfant s'entraîne avec une astuce simple.",
+      le4h: "Expliquer", le4p: "Il l'explique à son tour. C'est là que ça s'ancre.",
+      expH: "Ce que vous pouvez attendre",
+      ex1: "Aucun test chronométré", ex2: "À son rythme", ex3: "De petites victoires visibles", ex4: "Une réponse sous un jour d'école",
+      dLength: "Durée de la séance", dFormat: "Où", dPrice: "Tarif",
+      quotesH: "Ce que disent les parents",
+      enrichH: "Aussi proposé : l'enrichissement",
+      enrichP: "Pour les enfants qui veulent aller plus loin, en plus des maths.",
       xRobot: "Robotique", xRobotP: "Construire et programmer un vrai robot.",
       xElec: "Électronique", xElecP: "Créer des circuits qui s'allument.",
       xLang: "Parler une langue", xLangP: "S'exprimer avec confiance.",
       xFoot: "Football", xFootP: "Gestes plus sûrs, confiance en match.",
       xCv: "Ces activités peuvent faire la différence sur un CV.",
-      submit: "Réserver mon échange gratuit",
+      contactH: "Réservez votre échange gratuit de 15 minutes",
+      contactP: "Nous répondons sous un jour d'école.",
+      fName: "Votre nom", phName: "ex. Sarah Patel",
+      fAge: "Âge ou niveau de votre enfant", phAge: "ex. 9 ans / CM1",
+      fContact: "E-mail ou téléphone", phContact: "ex. sarah@exemple.fr ou 07700 900077",
+      fHelp: "Besoin d'aide en", fExtra: "Aussi intéressé par", optional: "(facultatif)",
+      cTables: "Tables de multiplication", cFractions: "Fractions", cUnsure: "Je ne sais pas encore",
+      cRobot: "Robotique", cElec: "Électronique", cLang: "Parler une langue", cFoot: "Football", cSurprise: "Surprenez-moi",
+      submit: "Envoyer sur WhatsApp", errFill: "Merci de renseigner votre nom, l'âge de votre enfant et un moyen de vous joindre.", errTopic: "Merci de choisir ce pour quoi vous avez besoin d'aide.",
+      waBtn: "Écrivez-moi sur WhatsApp", waOpen: "Ouvrir WhatsApp",
+      waHello: "Bonjour TableMates ! Je souhaite réserver un échange gratuit de 15 minutes.",
+      waMsg: "Bonjour TableMates ! Je suis {name}. Mon enfant ({age}) aurait besoin d'aide en : {topics}. Vous pouvez me joindre au : {contact}.",
+      waExtra: " Aussi intéressé par : {extras}.",
       thanksH: "Merci !", thanksP: "Nous répondons sous un jour d'école.",
       foot: "Maths en ligne, en individuel · 7–13 ans"
     }
   };
 
-  // new numbers on every visit
   function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
-  var n = pick([6, 7, 8, 9]);           // table of the day
-  var d = pick([3, 4, 5, 6]);           // fraction denominator
-  var k = 1 + Math.floor(Math.random() * (d - 1)); // parts taken away
-  var V = { n: n, m: 10 - n, p: n * 7, d: d };
+
+  // new numbers on every visit
+  var n = pick([6, 7, 8, 9]);
+  var d = pick([3, 4, 5, 6]);
+  var k = 1 + Math.floor(Math.random() * (d - 1));
+  var V = { n: n, m: 10 - n, p: n * 7, d: d, tutor: CONFIG.tutorName };
 
   document.querySelectorAll(".stairs .step").forEach(function (el, i) { el.textContent = n * (i + 1); });
   document.getElementById("eqT").textContent = n + " × 7 = " + (n * 7);
-  // full count from n up to 7 x n, each jump is +10 then minus (10 - n)
   var chain = document.getElementById("chain");
   for (var c = 1; c <= 7; c++) {
     if (c > 1) {
@@ -416,39 +580,95 @@ footer .logo b{color:var(--gold)}
     parts.appendChild(q);
   }
 
-  // ===== YOUR WHATSAPP NUMBER =====
-  // International format, digits only, no "+" or spaces. Example: UK 07700 900077 -> "447700900077"
-  var WA_NUMBER = "447459532358";
-  function waLink(text) { return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text); }
+  // ---- one-at-a-time animation (skipped if the visitor prefers reduced motion) ----
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stairsEl = document.querySelector(".stairs");
+  function kidsOf(c) { return [].slice.call(c.children); }
+  function hideKids(c) { kidsOf(c).forEach(function (k) { k.classList.remove("pop", "grow"); k.classList.add("seq-hide"); }); }
+  function play(c, gap) {
+    if (reduce) return;
+    (c._t || []).forEach(clearTimeout); c._t = [];
+    hideKids(c);
+    kidsOf(c).forEach(function (k, i) {
+      c._t.push(setTimeout(function () {
+        k.classList.remove("seq-hide"); void k.offsetWidth;
+        k.classList.add(c === stairsEl && !k.classList.contains("top") ? "grow" : "pop");
+      }, 250 + i * gap));
+    });
+  }
+  function onView(el, fn) {
+    if (!("IntersectionObserver" in window)) { fn(); return; }
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { fn(); io.disconnect(); } }); }, { threshold: 0.4 });
+    io.observe(el);
+  }
+  if (!reduce) {
+    play(stairsEl, 260);
+    hideKids(chain); onView(chain, function () { play(chain, 330); });
+    hideKids(parts); onView(parts, function () { play(parts, 380); });
+    document.querySelectorAll("[data-replay]").forEach(function (b) {
+      b.addEventListener("click", function () { play(document.getElementById(b.getAttribute("data-replay")), +b.getAttribute("data-gap")); });
+    });
+  } else {
+    document.querySelectorAll("[data-replay]").forEach(function (b) { b.hidden = true; });
+  }
+
+  document.getElementById("initial").textContent = (CONFIG.tutorName || "T").charAt(0).toUpperCase();
+  function waLink(text) { return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(text); }
+  function fill(str) { return str.replace(/\{(\w+)\}/g, function (m, key) { return V[key]; }); }
 
   var current = "en";
   var buttons = document.querySelectorAll(".lang button");
 
-  function fill(str) { return str.replace(/\{(\w+)\}/g, function (m, key) { return V[key]; }); }
+  function renderFacts(tr) {
+    var box = document.getElementById("facts");
+    box.innerHTML = "";
+    [["length", "dLength"], ["format", "dFormat"], ["price", "dPrice"]].forEach(function (p) {
+      var v = CONFIG.details[p[0]];
+      if (!v) return;
+      var f = document.createElement("div"); f.className = "fact";
+      var b = document.createElement("b"); b.textContent = tr[p[1]];
+      f.appendChild(b); f.appendChild(document.createTextNode(v));
+      box.appendChild(f);
+    });
+  }
+
+  function renderQuotes(lang) {
+    var sec = document.getElementById("testimonials");
+    var box = document.getElementById("quotes");
+    box.innerHTML = "";
+    sec.hidden = !CONFIG.testimonials.length;
+    CONFIG.testimonials.forEach(function (t) {
+      var el = document.createElement("div"); el.className = "quote";
+      var p = document.createElement("p"); p.textContent = "“" + (t[lang] || t.en) + "”";
+      var s = document.createElement("span"); s.textContent = t.who || "";
+      el.appendChild(p); el.appendChild(s); box.appendChild(el);
+    });
+  }
 
   function apply(lang) {
     current = lang;
     var tr = T[lang];
-    var d = tr;
     document.documentElement.lang = lang;
-    document.title = "TableMates";
+    document.title = tr.title;
+    var md = document.querySelector('meta[name="description"]'); if (md) md.setAttribute("content", tr.desc);
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var k = el.getAttribute("data-i18n");
-      if (d[k] !== undefined) el.textContent = fill(d[k]);
+      var key = el.getAttribute("data-i18n");
+      if (tr[key] !== undefined) el.textContent = fill(tr[key]);
     });
     document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
-      var k = el.getAttribute("data-i18n-ph");
-      if (d[k] !== undefined) el.setAttribute("placeholder", d[k]);
+      var key = el.getAttribute("data-i18n-ph");
+      if (tr[key] !== undefined) el.setAttribute("placeholder", tr[key]);
     });
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
-      var k = el.getAttribute("data-i18n-aria");
-      if (d[k] !== undefined) el.setAttribute("aria-label", fill(d[k]));
+      var key = el.getAttribute("data-i18n-aria");
+      if (tr[key] !== undefined) el.setAttribute("aria-label", fill(tr[key]));
     });
     buttons.forEach(function (b) {
       b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
     });
-    document.getElementById("waDirect").href = waLink(tr.waHello);
-    document.getElementById("waThanks").href = waLink(tr.waHello);
+    var fe = document.getElementById("formErr"); if (!fe.hidden) fe.textContent = fe.getAttribute("data-key") === "topic" ? tr.errTopic : tr.errFill;
+    renderFacts(tr);
+    renderQuotes(lang);
     try { localStorage.setItem("tm-lang", lang); } catch (e) {}
   }
 
@@ -456,44 +676,52 @@ footer .logo b{color:var(--gold)}
     b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
   });
 
-  // topic chips (multi-select)
-  // "Not sure yet" and "Surprise me" are stand-alone choices: picking one clears all the others
-  var chipBtns = document.querySelectorAll(".chips button");
-  chipBtns.forEach(function (b) {
-    b.addEventListener("click", function () {
-      var on = b.getAttribute("aria-pressed") !== "true";
-      b.setAttribute("aria-pressed", on ? "true" : "false");
-      if (!on) return;
-      var solo = b.hasAttribute("data-excl");
-      chipBtns.forEach(function (o) {
-        if (o === b) return;
-        if (solo || o.hasAttribute("data-excl")) o.setAttribute("aria-pressed", "false");
+  // chips: each group on its own. "Not sure yet" and "Surprise me" stand alone inside their group.
+  document.querySelectorAll(".chips").forEach(function (group) {
+    var btns = group.querySelectorAll("button");
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var on = b.getAttribute("aria-pressed") !== "true";
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+        if (!on) return;
+        var solo = b.hasAttribute("data-excl");
+        btns.forEach(function (o) {
+          if (o === b) return;
+          if (solo || o.hasAttribute("data-excl")) o.setAttribute("aria-pressed", "false");
+        });
       });
     });
   });
 
-  // form: validate, then open WhatsApp with the details filled in, and show the thank-you state.
+  document.querySelectorAll("#inquiry input").forEach(function (i) { i.addEventListener("input", function () { i.classList.remove("bad"); }); });
+  function chosen(id) {
+    return [].map.call(document.querySelectorAll("#" + id + " button[aria-pressed='true']"), function (b) { return b.textContent; }).join(", ");
+  }
+
+  // form: validate, open WhatsApp with the details filled in, show the thank-you state
   document.getElementById("inquiry").addEventListener("submit", function (e) {
     e.preventDefault();
-    var ok = true;
+    var bad = null, fe = document.getElementById("formErr"), cur = T[current];
     this.querySelectorAll("input[required]").forEach(function (i) {
-      if (!i.value.trim()) { ok = false; i.style.borderColor = "#C2410C"; } else { i.style.borderColor = ""; }
+      if (!i.value.trim()) { if (!bad) bad = i; i.classList.add("bad"); } else { i.classList.remove("bad"); }
     });
-    if (!ok) { this.querySelector("input[required]:invalid, input[style*='C2410C']").focus(); return; }
-    // build the WhatsApp message from the form and open it
-    var topics = [].map.call(document.querySelectorAll(".chips button[aria-pressed='true']"), function (b) { return b.textContent; }).join(", ") || "-";
-    var msg = T[current].waMsg
+    if (bad) { fe.setAttribute("data-key", "fill"); fe.textContent = cur.errFill; fe.hidden = false; bad.focus(); return; }
+    if (!chosen("grpMain")) { fe.setAttribute("data-key", "topic"); fe.textContent = cur.errTopic; fe.hidden = false; document.querySelector("#grpMain button").focus(); return; }
+    fe.hidden = true;
+    var tr = T[current];
+    var msg = tr.waMsg
       .replace("{name}", document.getElementById("parent-name").value.trim())
       .replace("{age}", document.getElementById("child-age").value.trim())
-      .replace("{topics}", topics)
+      .replace("{topics}", chosen("grpMain") || "-")
       .replace("{contact}", document.getElementById("contact-info").value.trim());
+    var extras = chosen("grpExtra");
+    if (extras) msg += tr.waExtra.replace("{extras}", extras);
     var url = waLink(msg);
     document.getElementById("waThanks").href = url;
     window.open(url, "_blank", "noopener");
     document.getElementById("formCard").classList.add("sent");
   });
 
-  // initial language: saved choice, else browser language
   var start = "en";
   try { start = localStorage.getItem("tm-lang") || ""; } catch (e) {}
   if (start !== "en" && start !== "fr") {
