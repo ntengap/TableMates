@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Times Tables & Fractions Tutor Online | 1-on-1 Maths, Ages 7–13 | TableMates</title>
 <meta name="description" content="Friendly 1-on-1 online tutoring in times tables and fractions for ages 7–13. Visual methods, no timed tests. Book a free 15-minute intro chat.">
 <meta name="robots" content="index,follow">
@@ -182,6 +182,70 @@ footer a{text-decoration:underline}
 .replay{min-height:40px;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:12px;padding:0 14px;font:700 14px var(--body);cursor:pointer;align-self:flex-start}
 .replay:hover{background:var(--apricot)}
 @media (prefers-reduced-motion:reduce){.pop,.grow{animation:none}.seq-hide{opacity:1}}
+
+/* secondary group + sticky call to action */
+#more>summary{display:none;list-style:none}
+#more>summary::-webkit-details-marker{display:none}
+.sticky-cta{display:none}
+
+/* ===== phones: only what matters first, the rest after the form ===== */
+@media (max-width:640px){
+  body{font-size:16px;padding-bottom:84px}
+  main{display:flex;flex-direction:column}
+  #contact{order:1}
+  #more{order:2}
+  .strip,.pill,.nav-link,.nav .btn-dark,.caption,.chat-pts,.demo .replay,.sun{display:none}
+  .nav{padding:10px 0}
+  .logo{font-size:21px}
+  .logo i{width:34px;height:34px;border-radius:10px}
+
+  .hero{padding:20px 16px 32px}
+  .hero .wrap{gap:24px}
+  .hero-copy{gap:16px;width:100%}
+  h1{font-size:clamp(32px,9.5vw,40px)}
+  .sub{font-size:17px}
+  .cta-row,.btn-hero{width:100%}
+  .btn-hero{min-height:60px;padding:0 20px;font-size:18px;justify-content:center}
+  .stairs{height:190px;gap:5px}
+  .step{height:calc(var(--h) * .5);font-size:13px;padding-top:6px;border-radius:9px 9px 0 0}
+  .top .step{height:calc(var(--h) * .5)}
+  .top svg{width:30px;height:30px}
+
+  section.block{padding:40px 16px 8px}
+  h2{font-size:28px}
+  .card{padding:20px;gap:14px;border-radius:22px}
+  .eq{font-size:34px}
+  .demo{padding:14px}
+
+  .chat-band{margin:36px 16px 0}
+  .chat-in{padding:24px 20px;gap:18px;border-radius:26px}
+  .chat-in h2{font-size:28px}
+
+  .photo{width:120px;height:120px;font-size:48px;border-width:4px}
+  .tutor{gap:18px}
+  .tutor-copy{gap:12px;text-align:center;align-items:center}
+  .tutor-copy h2{text-align:center;font-size:26px}
+  .badges{justify-content:center}
+  .badge:nth-child(3){display:none}
+
+  #contact{padding:40px 16px 48px}
+  .contact-head h2{font-size:28px}
+  .form-card{padding:20px;border-radius:24px}
+
+  #more{padding:0 16px}
+  #more>summary{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;margin-top:8px;border:2px solid var(--ink);border-radius:16px;background:#fff;font:700 16px var(--body);cursor:pointer;text-align:center;padding:8px 16px}
+  #more>summary::after{content:"▾";font-size:18px}
+  #more[open]>summary::after{content:"▴"}
+  #more .block,#more .enrich{padding-left:0;padding-right:0}
+  .enrich{margin-top:40px;padding:36px 0}
+
+  footer{padding-bottom:28px}
+  footer .wrap{flex-direction:column;align-items:flex-start}
+
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(255,248,238,.97);border-top:1.5px solid var(--line);padding:10px max(16px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));transition:transform .2s}
+  .sticky-cta.off{transform:translateY(110%);pointer-events:none}
+  .sticky-cta .btn{width:100%;min-height:54px;font-size:17px}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
@@ -310,6 +374,10 @@ footer a{text-decoration:underline}
     </div>
   </section>
 
+  <!-- SECONDARY (on phones: after the booking form, collapsed) -->
+  <details id="more" open>
+  <summary class="more-sum"><span data-i18n="moreBtn">How lessons work, extras and more</span></summary>
+
   <!-- HOW LESSONS WORK -->
   <section class="block">
     <div class="wrap stack">
@@ -355,6 +423,8 @@ footer a{text-decoration:underline}
       <p class="cv" data-i18n="xCv">Extras like these can make the difference on a CV.</p>
     </div>
   </section>
+
+  </details>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -419,13 +489,15 @@ footer a{text-decoration:underline}
   </div>
 </footer>
 
+<div class="sticky-cta off" id="stickyCta"><a class="btn btn-flame" href="#contact" data-i18n="stickyCta">Book your free 15-min chat</a></div>
+
 <script>
 (function () {
   // ================= EDIT YOUR DETAILS HERE =================
   var CONFIG = {
     // WhatsApp: international format, digits only, no "+" or spaces. UK 07700 900077 -> "447700900077"
-    whatsapp: "447459532358",
-    tutorName: "Mr P",
+    whatsapp: "33600000000",
+    tutorName: "Pat",
     // Optional facts shown under "What you can expect". Leave "" to hide a fact.
     details: { length: "", format: "", price: "" },
     // Add parent testimonials ONLY with the parent's permission. Example:
@@ -440,6 +512,7 @@ footer a{text-decoration:underline}
       desc: "Friendly 1-on-1 online tutoring in times tables and fractions for ages 7–13. Visual methods, no timed tests. Book a free 15-minute intro chat.",
       strip: "Free 15-minute intro chat for every new family.", stripCta: "Book yours",
       replay: "Replay",
+      stickyCta: "Book your free 15-min chat", moreBtn: "How lessons work, extras and more",
       navRes: "Free resources", navCta: "Free 15-min chat",
       pill: "Times tables & fractions · 1-on-1 online · Ages 7–13",
       h1a: "Times tables and fractions,", h1b: "made clear.",
@@ -495,6 +568,7 @@ footer a{text-decoration:underline}
       desc: "Soutien en maths en ligne, en individuel, pour les 7–13 ans : tables de multiplication et fractions, méthodes visuelles, sans test chronométré. Échange gratuit de 15 minutes.",
       strip: "Échange d'introduction gratuit de 15 minutes pour chaque nouvelle famille.", stripCta: "Réservez le vôtre",
       replay: "Rejouer",
+      stickyCta: "Réservez votre échange gratuit", moreBtn: "Séances, activités en plus et davantage",
       navRes: "Ressources gratuites", navCta: "Échange gratuit",
       pill: "Tables de multiplication & fractions · En ligne, en individuel · 7–13 ans",
       h1a: "Tables de multiplication et fractions,", h1b: "enfin claires.",
@@ -720,6 +794,29 @@ footer a{text-decoration:underline}
     document.getElementById("waThanks").href = url;
     window.open(url, "_blank", "noopener");
     document.getElementById("formCard").classList.add("sent");
+  });
+
+  // ---- phones: collapse the secondary group; keep it open on larger screens ----
+  var more = document.getElementById("more");
+  var mq = window.matchMedia("(max-width: 640px)");
+  function syncMore() { if (mq.matches) { more.removeAttribute("open"); } else { more.setAttribute("open", ""); } }
+  syncMore();
+  if (mq.addEventListener) mq.addEventListener("change", syncMore); else if (mq.addListener) mq.addListener(syncMore);
+
+  // ---- sticky call to action: hidden while the hero button or the form is on screen ----
+  var sticky = document.getElementById("stickyCta");
+  var seen = {};
+  function updSticky() { var any = false; for (var k in seen) if (seen[k]) any = true; sticky.classList.toggle("off", any); }
+  if ("IntersectionObserver" in window) {
+    var io2 = new IntersectionObserver(function (es) { es.forEach(function (e) { seen[e.target.id || e.target.className] = e.isIntersecting; }); updSticky(); }, { threshold: 0.2 });
+    io2.observe(document.querySelector(".btn-hero")); io2.observe(document.getElementById("contact"));
+  } else { sticky.classList.remove("off"); }
+
+  // ---- every "book" button leads straight into the first form field ----
+  document.querySelectorAll('a[href="#contact"]').forEach(function (a) {
+    a.addEventListener("click", function () {
+      setTimeout(function () { try { document.getElementById("parent-name").focus({ preventScroll: true }); } catch (e) {} }, 450);
+    });
   });
 
   var start = "en";
